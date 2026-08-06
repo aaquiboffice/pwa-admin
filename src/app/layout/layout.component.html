@@ -1,0 +1,15 @@
+<div class="layout-shell" [class.sidebar-open]="mobileSidebarOpen()">
+  <app-header (menuToggle)="toggleSidebar()"></app-header>
+
+  <div class="layout-main">
+    <aside class="sidebar" [class.open]="mobileSidebarOpen() || !isMobile">
+      <app-sidebar (menuClick)="onMenuItemClick()" (logout)="logout()"></app-sidebar>
+    </aside>
+
+    <main class="layout-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <div class="overlay" *ngIf="isMobile && mobileSidebarOpen()" (click)="closeSidebar()"></div>
+</div>

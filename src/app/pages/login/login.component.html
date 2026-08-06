@@ -1,0 +1,35 @@
+﻿<main class="login">
+  <div class="brand">
+    <b>CD</b><small>CIVICDESK ADMIN</small>
+    <h1>Manage every service<br /><i>with clarity.</i></h1>
+  </div>
+  <form class="card" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <small>ADMIN PORTAL</small>
+    <h2>Welcome back</h2>
+    <p>Sign in to manage submitted records.</p>
+    <label for="email"
+      >Email<input
+        id="email"
+        type="email"
+        formControlName="email"
+        placeholder="admin@example.com"
+        autocomplete="username" /></label
+    ><label for="password"
+      >Password<input
+        id="password"
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+        autocomplete="current-password"
+    /></label>
+    @if (error()) {
+      <em>{{ error() }}</em>
+    }
+    <button type="submit" [disabled]="loading()">
+      <span class="button-content">
+        <span class="button-label">{{ loading() ? "Signing in…" : "Sign in" }}</span>
+        <span class="button-icon" aria-hidden="true">→</span>
+      </span>
+    </button>
+  </form>
+</main>

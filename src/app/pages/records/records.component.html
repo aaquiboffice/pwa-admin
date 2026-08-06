@@ -1,0 +1,66 @@
+﻿<div class="page-layout">
+  <main>
+    <header>
+      <div><small>APPLICATIONS</small><h1>Submitted records</h1><p>Review and manage all citizen applications.</p></div>
+      <button class="refresh" (click)="load()">Refresh</button>
+    </header>
+
+    @if (error()) { <p class="error">{{ error() }}</p> }
+
+    <section class="records">
+      <div class="count">{{ entries().length }} records found</div>
+      <div class="table-wrap">
+        <table z-table zType="bordered" zSize="compact">
+          <thead z-table-header>
+            <tr z-table-row>
+              <th z-table-head>Name</th><th z-table-head>Contact Number</th><th z-table-head>Apartment Name</th>
+              <th z-table-head>Service</th><th z-table-head>Ration Card Action</th><th z-table-head>EPIC Number</th>
+              <th z-table-head>Aadhaar Number</th><th z-table-head>Status</th><th z-table-head>Action</th>
+            </tr>
+          </thead>
+          <tbody z-table-body>
+            @for (row of entries(); track row._id) {
+              @if (editing() === row._id && draft(); as current) {
+                <tr z-table-row class="editing-row">
+                  <td z-table-cell><input [ngModel]="current.name" (ngModelChange)="setDraftField('name', $event)" aria-label="Name"></td>
+                  <td z-table-cell><input [ngModel]="current.contactNumber" (ngModelChange)="setDraftField('contactNumber', $event)" aria-label="Contact number"></td>
+                  <td z-table-cell><input [ngModel]="current.apartmentName" (ngModelChange)="setDraftField('apartmentName', $event)" aria-label="Apartment name"></td>
+                  <td z-table-cell>
+                    <select [ngModel]="current.service" (ngModelChange)="setDraftField('service', $event)" aria-label="Service">
+                      @for (item of services; track item[0]) { <option [value]="item[0]">{{ item[1] }}</option> }
+                    </select>
+                  </td>
+                  <td z-table-cell>
+                    @if (current.service === 'ration-card') {
+                      <select [ngModel]="current.rationAction" (ngModelChange)="setDraftField('rationAction', $event)" aria-label="Ration card action">
+                        @for (item of actions; track item[0]) { <option [value]="item[0]">{{ item[1] }}</option> }
+                      </select>
+                    } @else { <span>—</span> }
+                  </td>
+                  <td z-table-cell><input [ngModel]="current.epicNumber" (ngModelChange)="setDraftField('epicNumber', $event)" aria-label="EPIC number"></td>
+                  <td z-table-cell><input [ngModel]="current.aadharNumber" (ngModelChange)="setDraftField('aadharNumber', $event)" aria-label="Aadhaar number"></td>
+                  <td z-table-cell>
+                    <select [ngModel]="current.status" (ngModelChange)="setDraftField('status', $event)" aria-label="Status">
+                      <option>Pending</option><option>In progress</option><option>Completed</option>
+                    </select>
+                  </td>
+                  <td z-table-cell class="actions"><button (click)="update()">Update</button><button class="muted" (click)="cancel()">Cancel</button></td>
+                </tr>
+              } @else {
+                <tr z-table-row>
+                  <td z-table-cell>{{ row.name }}</td><td z-table-cell>{{ row.contactNumber }}</td><td z-table-cell>{{ row.apartmentName }}</td>
+                  <td z-table-cell>{{ label(row.service) }}</td><td z-table-cell>{{ action(row.rationAction) }}</td>
+                  <td z-table-cell>{{ row.epicNumber || '—' }}</td><td z-table-cell>{{ row.aadharNumber || '—' }}</td>
+                  <td z-table-cell><span>{{ row.status }}</span></td>
+                  <td z-table-cell class="actions"><button (click)="edit(row)">Edit</button><button class="danger" (click)="delete(row)">Delete</button></td>
+                </tr>
+              }
+            } @empty {
+              <tr z-table-row><td z-table-cell colspan="9" class="empty">No submitted records.</td></tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>

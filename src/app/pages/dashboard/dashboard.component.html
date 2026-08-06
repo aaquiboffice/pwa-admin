@@ -1,0 +1,38 @@
+﻿<div class="page-layout">
+  <main>
+    <header>
+      <div>
+        <small>OVERVIEW</small>
+        <h1>Service dashboard</h1>
+        <p>Monitor application activity across all citizen services.</p>
+      </div>
+      <div class="profile">
+        {{ admin?.name }}<span>{{ admin?.role }}</span>
+      </div>
+    </header>
+    @if (error()) {
+      <p class="error">{{ error() }}</p>
+    }
+    <div class="total">
+      <span>Total records</span><strong>{{ dashboard().total }}</strong>
+    </div>
+    <div class="cards">
+      @for (service of services; track service[0]) {
+        <article>
+          <span>{{ service[1] }}</span
+          ><strong>{{ count(service[0]) }}</strong>
+          @if (service[0] === "ration-card") {
+            <div class="breakdown">
+              @for (item of actions; track item[0]) {
+                <small
+                  >{{ item[1] }}
+                  <b>{{ count("ration-card", item[0]) }}</b></small
+                >
+              }
+            </div>
+          }
+        </article>
+      }
+    </div>
+  </main>
+</div>

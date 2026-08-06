@@ -1,0 +1,141 @@
+﻿:host {
+  display: block;
+  min-height: 100dvh;
+}
+.page-layout main {
+  max-width: 1200px;
+  width: 100%;
+  padding: 45px clamp(22px, 4vw, 60px);
+  margin: 0 auto;
+}
+header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+header small {
+  color: #d18450;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+h1 {
+  margin: 10px 0 7px;
+  color: #173f39;
+  font-size: clamp(32px, 4vw, 46px);
+  letter-spacing: -0.05em;
+}
+header p {
+  margin: 0;
+  color: #80918d;
+  font-size: 13px;
+}
+.profile {
+  color: #365750;
+  font-size: 12px;
+  text-align: right;
+}
+.profile span {
+  display: block;
+  margin-top: 4px;
+  color: #80918d;
+  font-size: 10px;
+}
+.total {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 160px;
+  padding: 16px 20px;
+  border: 1px solid #cbe8dd;
+  border-radius: 13px;
+  background: #effaf5;
+}
+.total span {
+  color: #63827a;
+  font-size: 11px;
+}
+.total strong {
+  margin-top: 4px;
+  color: #0d7469;
+  font-size: 30px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+.cards article {
+  min-height: 120px;
+  padding: 18px;
+  border: 1px solid #e1ebe8;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 25px #1c594508;
+}
+.cards article > span {
+  display: block;
+  color: #63827a;
+  font-size: 11px;
+}
+.cards article > strong {
+  display: block;
+  margin-top: 12px;
+  color: #0d7469;
+  font-size: 28px;
+}
+.breakdown {
+  display: grid;
+  gap: 4px;
+  margin-top: 9px;
+  padding-top: 8px;
+  border-top: 1px solid #edf2f0;
+}
+.breakdown small {
+  display: flex;
+  justify-content: space-between;
+  color: #80918d;
+  font-size: 9px;
+}
+.breakdown b {
+  color: #365750;
+}
+.error {
+  padding: 12px;
+  border: 1px solid #f1c3bc;
+  border-radius: 8px;
+  background: #fff3f1;
+  color: #bc6259;
+  font-size: 11px;
+}
+@media (max-width: 950px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 650px) {
+  .page-layout main {
+    padding: 24px 16px 45px;
+  }
+  header {
+    align-items: flex-start;
+  }
+  .profile {
+    display: none;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 1100px) and (min-width: 651px) {
+  .page-layout main {
+    padding: 36px 28px;
+  }
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,12 @@
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,sans-serif;background:#f5f8f6;color:#173f39}button,input,select{font:inherit}
+.zard-table { width:100%; border-collapse:collapse; caption-side:bottom; font-size:.875rem; }
+.zard-table thead tr { border-bottom:1px solid #dce6e3; }
+.zard-table tbody tr { border-bottom:1px solid #e5ecea; transition:background-color .15s ease; }
+.zard-table tbody tr:hover { background:#f5faf8; }
+.zard-table th { height:2.5rem; padding:.5rem; text-align:left; vertical-align:middle; font-weight:700; color:#46635e; white-space:nowrap; }
+.zard-table td { padding:.75rem .5rem; vertical-align:middle; }
+.zard-table-bordered { border:1px solid #dce6e3; }
+.zard-table-bordered th,.zard-table-bordered td { border-right:1px solid #e5ecea; }
+.zard-table-striped tbody tr:nth-child(odd) { background:#f8fbfa; }
+.zard-table-compact th,.zard-table-compact td { padding-top:.5rem; padding-bottom:.5rem; }
+.zard-table-comfortable th,.zard-table-comfortable td { padding-top:1rem; padding-bottom:1rem; }

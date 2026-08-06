@@ -1,0 +1,13 @@
+[33m❯[39m Building...
+[32m✔[39m Building...
+[1mInitial chunk files[22m  [2m | [22m[1mNames[22m        [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+[32mmain-QRZZYFVI.js[39m     [2m | [22m[2mmain[22m         [2m | [22m[36m318.31 kB[39m[2m | [22m               [36m78.64 kB[39m
+[32mpolyfills-RV3JTMEC.js[39m[2m | [22m[2mpolyfills[22m    [2m | [22m [36m35.78 kB[39m[2m | [22m               [36m11.63 kB[39m
+[32mstyles-H2X7NVMW.css[39m  [2m | [22m[2mstyles[22m       [2m | [22m[36m983 bytes[39m[2m | [22m              [36m983 bytes[39m
+
+[1m [22m                    [2m | [22m[1mInitial total[22m[2m | [22m[1m355.07 kB[22m[2m | [22m               [1m91.26 kB[22m
+
+Application bundle generation complete. [48.675 seconds] - 2026-08-05T11:33:33.541Z
+
+Output location: E:\Aaquib\pwa-app\admin-panel\dist\admin
+

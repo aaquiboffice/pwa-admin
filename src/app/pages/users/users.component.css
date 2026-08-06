@@ -1,0 +1,145 @@
+﻿:host {
+  display: block;
+  min-height: 100dvh;
+}
+.page-layout main {
+  width: 100%;
+  padding: 45px clamp(22px, 4vw, 60px);
+  margin: 0 auto;
+}
+header small {
+  color: #d18450;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+h1 {
+  margin: 10px 0 7px;
+  font-size: clamp(32px, 4vw, 46px);
+}
+header p,
+.card p {
+  color: #80918d;
+  font-size: 13px;
+}
+.card {
+  max-width: 620px;
+  padding: 28px;
+  border: 1px solid #e1ebe8;
+  border-radius: 15px;
+  background: #fff;
+}
+.card h2 {
+  margin: 0 0 6px;
+  font-size: 19px;
+}
+.card form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 24px;
+}
+.card label {
+  font-size: 11px;
+  font-weight: 700;
+}
+.card label:first-child {
+  grid-column: span 2;
+}
+.card input {
+  display: block;
+  width: 100%;
+  height: 42px;
+  margin-top: 8px;
+  padding: 0 11px;
+  border: 1px solid #d5e4df;
+  border-radius: 7px;
+}
+.card button {
+  grid-column: span 2;
+  height: 42px;
+  border: 0;
+  border-radius: 7px;
+  background: #0d7469;
+  color: #fff;
+  font-weight: 700;
+}
+.notice,
+.error {
+  margin-top: 18px;
+  font-size: 11px;
+}
+.notice {
+  color: #24724f;
+}
+.error {
+  color: #bc6259;
+}
+@media (max-width: 650px) {
+  .page-layout main {
+    padding: 30px 16px;
+  }
+  .card {
+    padding: 22px;
+  }
+  .card form {
+    grid-template-columns: 1fr;
+  }
+  .card label:first-child,
+  .card button {
+    grid-column: auto;
+  }
+}
+/* Responsive layout refinements */
+.page-layout {
+  min-width: 0;
+}
+.page-layout main {
+  min-width: 0;
+}
+.refresh,
+.card button,
+.actions button {
+  min-height: 40px;
+}
+@media (max-width: 1100px) and (min-width: 651px) {
+  .page-layout main {
+    padding: 36px 28px;
+  }
+}
+@media (max-width: 650px) {
+  .page-layout main {
+    min-height: calc(100dvh - 64px);
+  }
+  .cards {
+    gap: 12px;
+  }
+  .cards article {
+    min-height: 110px;
+  }
+  .total {
+    width: 100%;
+  }
+  header {
+    gap: 14px;
+  }
+  .records {
+    border-radius: 12px;
+  }
+  .table-wrap {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+@media (max-width: 380px) {
+  .page-layout main {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .cards article {
+    padding: 15px;
+  }
+  .cards article > strong {
+    font-size: 25px;
+  }
+}

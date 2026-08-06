@@ -1,0 +1,155 @@
+﻿:host {
+  display: block;
+  min-height: 100dvh;
+}
+.page-layout main {
+  max-width: 1440px;
+  width: 100%;
+  padding: 45px clamp(22px, 4vw, 60px);
+  margin: 0 auto;
+}
+header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+header small {
+  color: #d18450;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+h1 {
+  margin: 10px 0 7px;
+  font-size: clamp(32px, 4vw, 46px);
+  letter-spacing: -0.05em;
+}
+header p {
+  margin: 0;
+  color: #80918d;
+  font-size: 13px;
+}
+.refresh {
+  min-height: 40px;
+  border: 0;
+  background: #0d7469;
+  color: #fff;
+  border-radius: 7px;
+  padding: 11px 14px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.error {
+  padding: 12px;
+  border: 1px solid #f1c3bc;
+  background: #fff3f1;
+  color: #bc6259;
+  font-size: 11px;
+}
+.records {
+  border: 1px solid #e1ebe8;
+  border-radius: 15px;
+  background: #fff;
+  overflow: hidden;
+}
+.count {
+  padding: 18px 20px;
+  color: #80918d;
+  font-size: 11px;
+}
+.table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+table {
+  width: 100%;
+  min-width: 1200px;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 13px 16px;
+  border-top: 1px solid #edf2f0;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 11px;
+}
+th {
+  background: #f7faf9;
+  color: #63827a;
+  font-size: 10px;
+}
+td {
+  color: #365750;
+}
+.actions {
+  display: flex;
+  gap: 7px;
+}
+.actions button {
+  min-height: 40px;
+  border: 0;
+  border-radius: 6px;
+  background: #e8f5f0;
+  color: #0d7469;
+  padding: 7px 9px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.actions .danger {
+  background: #fff0ee;
+  color: #bc6259;
+}
+.actions .muted {
+  background: #f1f4f3;
+  color: #63827a;
+}
+select {
+  padding: 6px;
+  border: 1px solid #d5e4df;
+  border-radius: 5px;
+  font-size: 10px;
+}
+.empty {
+  text-align: center;
+  padding: 35px;
+  color: #80918d;
+}
+@media (max-width: 1100px) and (min-width: 651px) {
+  .page-layout main {
+    padding: 36px 28px;
+  }
+}
+@media (max-width: 650px) {
+  .page-layout main {
+    min-height: calc(100dvh - 64px);
+    padding: 30px 16px 45px;
+  }
+  header {
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .refresh {
+    font-size: 10px;
+  }
+}
+input, select {
+  width: 150px;
+  min-height: 32px;
+  padding: 6px 8px;
+  border: 1px solid #b9d5cc;
+  border-radius: 5px;
+  background: #fff;
+  color: #254c44;
+  font-size: 10px;
+}
+.editing-row {
+  background: #f4fbf8;
+}
+.editing-row input:focus,
+.editing-row select:focus {
+  outline: 2px solid #8bcbbb;
+  outline-offset: 1px;
+}

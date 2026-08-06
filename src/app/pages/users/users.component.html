@@ -1,0 +1,8 @@
+﻿<div class="page-layout">
+  <main>
+    <header>
+      <div><small>ACCESS CONTROL</small><h1>Admin users</h1><p>Create and manage access for the admin team.</p></div>
+    </header>
+    @if(admin?.role==='super-admin'){<section class="card"><h2>Create Admin user</h2><p>Only the Super Admin can create new Admin accounts.</p><form [formGroup]="form" (ngSubmit)="create()"><label>Name<input formControlName="name" placeholder="Full name"></label><label>Email<input type="email" formControlName="email" placeholder="admin@example.com"></label><label>Password<input type="password" formControlName="password" placeholder="Minimum 8 characters"></label><button>Create Admin</button></form>@if(notice()){<div class="notice">{{notice()}}</div>}@if(error()){<div class="error">{{error()}}</div>}</section>}@else{<section class="card"><h2>Access restricted</h2><p>Only the Super Admin can create new Admin users.</p></section>}
+</main>
+</div>

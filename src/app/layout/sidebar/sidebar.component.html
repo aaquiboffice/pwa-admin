@@ -1,0 +1,20 @@
+<div class="sidebar-shell">
+  <div class="menu-panel">
+    <nav class="menu-items">
+      <a
+        *ngFor="let item of menu"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="onMenuSelect()"
+      >
+        <span class="icon">{{ item.icon }}</span>
+        <span>{{ item.label }}</span>
+      </a>
+    </nav>
+  </div>
+
+  <button class="logout-btn" type="button" (click)="onLogout()">
+    ↪ <span>Sign out</span>
+  </button>
+</div>
