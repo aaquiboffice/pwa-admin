@@ -1,6 +1,6 @@
 {
-  "name": "CivicDesk PWA",
-  "short_name": "CivicDesk",
+  "name": "CD Admin",
+  "short_name": "CD",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
