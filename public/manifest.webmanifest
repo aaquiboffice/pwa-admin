@@ -1,6 +1,6 @@
 {
   "name": "CD Admin",
-  "short_name": "CD",
+  "short_name": "CD Admin",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
